@@ -6,5 +6,5 @@ describe PrimalCut do
   it { should validate_presence_of :name }
 
   it { should have_many :cuts }
-  it { should belong_to :animal }
+  it { should belongs_to :animal }
 end
