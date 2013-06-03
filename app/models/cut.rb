@@ -3,7 +3,7 @@ class Cut < ActiveRecord::Base
 
   belongs_to :animal
   belongs_to :primal_cut
-  belongs_to :favorite
+  has_many   :favorites
 
   validates :name, :presence => true
 end
