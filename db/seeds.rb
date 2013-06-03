@@ -30,5 +30,6 @@ loin = pig.primal_cuts.find_by_name('Loin')
 end
 
 user =User.create(first_name: 'Erin', last_name: 'Zobitz', email: 'erinzobitz@gmail.com')
-
+favorite_cut = Cut.find_by_name('Porterhouse')
+user.cuts << favorite_cut
 
