@@ -1,12 +1,12 @@
 class FavoritesController < ApplicationController
   respond_to :json
 
-  before_filter :find_user
+  before_filter :find_user, :only => [:index, :create]
   before_filter :find_favorite, :only=> [:show, :update, :destroy]
 
   def index
-    @favorite = @user.favorites.all
-    respond_with @favorite
+    @favorites = @user.favorites.all
+    respond_with @favorites
   end
 
   def create

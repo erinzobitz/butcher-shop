@@ -10,6 +10,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'fuubar'
   gem 'nyan-cat-formatter'
+  gem 'debugger'
 end
 
 group :test do
@@ -17,3 +18,4 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
 end
+
