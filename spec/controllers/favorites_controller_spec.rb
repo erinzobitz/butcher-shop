@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe FavoritesController do
-	let!(:favorite)  { create :favorite }
-	subject                { response }
+	let!(:favorite)  { create :favorite}
+	subject          { response }
 
 	describe "GET 'index'" do
 		before(:each) { get :index, :format => :json, :user_id => favorite.user.id }
@@ -12,12 +12,13 @@ describe FavoritesController do
 	end
 
 	describe "POST 'create'" do
-		before(:each) { post :create, {:user_id => favorite.user.id, :cut_id => 1}}
+		before(:each) { post :create, {:user_id => favorite.user.id, :cut_id => 1}, :format => :json }
 
 		its(:body)    { should_not be_empty }
 		its(:status)  { should be 201 }
 		its(:headers) { should include "Location" }
 	end
+
 
 	describe "GET 'show'" do
 		before(:each) { get :show, :id => favorite.id, :format => :json }
