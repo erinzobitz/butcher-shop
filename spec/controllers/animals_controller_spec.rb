@@ -56,7 +56,7 @@ describe AnimalsController do
       end
 
       context "with bad params" do
-        before(:each) { put :update, { :id => favorite.id, :favorite => nil, :format => :json } }
+        before(:each) { put :update, { :id => animal.id, :animal => { :name => nil }, :format => :json } }
 
         its(:body)    { should_not be_empty }
         its(:status)  { should be 422 }
